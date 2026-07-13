@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Hassan | Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Side Rail -->
+<aside class="side-rail">
+  <div class="side-icons top">
+    <a href="#home" class="side-icon active" title="Home"><i class="fa-solid fa-house"></i></a>
+    <a href="#about" class="side-icon" title="About"><i class="fa-solid fa-user"></i></a>
+    <a href="#skills" class="side-icon" title="Skills"><i class="fa-solid fa-code"></i></a>
+    <a href="#projects" class="side-icon" title="Projects"><i class="fa-solid fa-briefcase"></i></a>
+    <a href="#experience" class="side-icon" title="Experience"><i class="fa-solid fa-file-lines"></i></a>
+    <a href="#contact" class="side-icon" title="Contact"><i class="fa-solid fa-envelope"></i></a>
+  </div>
+  <div class="side-icons bottom">
+    <a href="https://github.com/" target="_blank" class="side-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://linkedin.com/" target="_blank" class="side-icon" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://instagram.com/" target="_blank" class="side-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+</aside>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">MH</div>
+  <nav class="nav-links">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+  <div class="navbar-right">
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+      <i class="fa-solid fa-sun"></i>
+      <span class="toggle-dot"></span>
+    </button>
+    <a href="#contact" class="btn btn-hire">Hire Me</a>
+  </div>
+  <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <div class="badge">💻 Turning Ideas Into Scalable Web Solutions</div>
+      <h1 class="hero-title"><span class="gradient-text">Muhammad Hassan</span></h1>
+      <h2 class="hero-subtitle">Full Stack <span class="gradient-text-blue">Developer</span></h2>
+      <div class="tech-pills">
+        <span>HTML</span><span>CSS</span><span>Tailwind CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span>
+      </div>
+      <p class="hero-desc">I build modern, responsive and scalable web applications using Laravel and JavaScript.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary" id="downloadCv"><i class="fa-solid fa-download"></i> Download CV</a>
+        <a href="#projects" class="btn btn-outline">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="orbit-ring"></div>
+      <div class="laptop">
+        <div class="laptop-screen">
+          <div class="code-line" style="width:70%"></div>
+          <div class="code-line" style="width:45%"></div>
+          <div class="code-line" style="width:85%"></div>
+          <div class="code-line" style="width:55%"></div>
+          <div class="code-line" style="width:65%"></div>
+          <div class="code-line" style="width:40%"></div>
+          <div class="code-line" style="width:75%"></div>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+      <div class="float-icon icon-html" style="top:34%; left:2%;"><i class="fa-brands fa-html5"></i></div>
+      <div class="float-icon icon-code" style="top:8%; left:34%;"><i class="fa-solid fa-code"></i></div>
+      <div class="float-icon icon-css" style="top:16%; right:2%;"><i class="fa-brands fa-css3-alt"></i></div>
+      <div class="float-icon icon-php" style="top:56%; left:14%;"><i class="fa-brands fa-php"></i></div>
+      <div class="float-icon icon-js" style="top:62%; right:12%;">JS</div>
+      <div class="float-icon icon-laravel" style="top:82%; right:4%;"><i class="fa-brands fa-laravel"></i></div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat-card">
+      <div class="stat-icon icon-blue"><i class="fa-solid fa-user"></i></div>
+      <div><h3>1+</h3><p>Years of Learning</p></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-orange"><i class="fa-solid fa-folder"></i></div>
+      <div><h3>5+</h3><p>Projects Completed</p></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-purple"><i class="fa-solid fa-code"></i></div>
+      <div><h3>10+</h3><p>Technologies</p></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-pink"><i class="fa-solid fa-face-smile"></i></div>
+      <div><h3>Available</h3><p>For Freelance</p></div>
+    </div>
+  </section>
+
+  <!-- About + Skills -->
+  <section class="about-skills">
+    <div id="about" class="about-card">
+      <div class="about-photo-wrap">
+        <div class="photo-ring"></div>
+        <img src="profile.jpeg" alt="Muhammad Hassan" class="about-photo">
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">Who I Am</span>
+        <h2>About Me</h2>
+        <p>I am a passionate Full Stack Developer who loves building modern web applications. I specialize in Laravel for backend development and modern technologies like HTML, CSS, Tailwind CSS, JavaScript for frontend.</p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-circle-check"></i> Clean Code</li>
+          <li><i class="fa-solid fa-circle-check"></i> Responsive Design</li>
+          <li><i class="fa-solid fa-circle-check"></i> Best Performance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="skills" class="skills-card">
+      <div class="skills-header">
+        <h2>Skills</h2>
+        <a href="#skills">View All Skills <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="skill-row">
+        <div class="skill-top"><span>HTML</span><span>95%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-top"><span>CSS</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-top"><span>Tailwind CSS</span><span>95%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-top"><span>JavaScript</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-top"><span>PHP</span><span>80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-top"><span>Laravel</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <span class="eyebrow center">My Work</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-thumb"><i class="fa-solid fa-cart-shopping"></i></div>
+        <h3>E-Commerce Store</h3>
+        <p>Laravel + Tailwind CSS powered online store with cart, checkout and admin panel.</p>
+        <div class="tag-row"><span>Laravel</span><span>Tailwind</span><span>MySQL</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb"><i class="fa-solid fa-list-check"></i></div>
+        <h3>Task Manager App</h3>
+        <p>A responsive task management tool with drag-and-drop boards, built using JavaScript.</p>
+        <div class="tag-row"><span>PHP</span><span>JavaScript</span><span>MySQL</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb"><i class="fa-solid fa-blog"></i></div>
+        <h3>Blog Platform</h3>
+        <p>A full-featured blogging platform with authentication, comments and admin dashboard.</p>
+        <div class="tag-row"><span>Laravel</span><span>HTML</span><span>CSS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <span class="eyebrow center">What I Offer</span>
+    <h2 class="section-title">Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Web Development</h3>
+        <p>Building fast, responsive and scalable websites using Laravel and modern JavaScript.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-object-group"></i></div>
+        <h3>UI Implementation</h3>
+        <p>Turning designs into clean, pixel-perfect and fully responsive interfaces.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
+        <h3>API Integration</h3>
+        <p>Connecting your app with third-party services and building custom REST APIs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="experience">
+    <span class="eyebrow center">My Journey</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Full Stack Developer (Freelance)</h3>
+          <span class="timeline-date">2025 - Present</span>
+          <p>Building web applications for clients using Laravel, JavaScript and Tailwind CSS.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Self-Taught Web Development</h3>
+          <span class="timeline-date">2024 - 2025</span>
+          <p>Learned HTML, CSS, JavaScript, PHP and Laravel through hands-on projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <span class="eyebrow center">Get In Touch</span>
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <div class="about-photo-wrap small">
+          <div class="photo-ring"></div>
+          <img src="profile.jpeg" alt="Muhammad Hassan" class="about-photo">
+        </div>
+        <h3>Muhammad Hassan</h3>
+        <p class="contact-role">Full Stack Developer</p>
+        <ul class="contact-list">
+          <li>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:m.hassan965934@gmail.com" id="emailText">
+        m.hassan965934@gmail.com
+    </a>
+</li>
+          <li><i class="fa-solid fa-phone"></i> <span id="phoneText">+92 3025745994</span></li>
+          <li><i class="fa-solid fa-location-dot"></i> Taxila,Pakistan</li>
+        </ul>
+        <div class="contact-socials">
+          <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Muhammad Hassan. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
