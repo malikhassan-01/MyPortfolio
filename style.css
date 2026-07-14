@@ -27,12 +27,25 @@ body.light {
 
 html { scroll-behavior: smooth; }
 
+/* RESPONSIVE: guard the root element the same way body already does, so no
+   element can ever force a horizontal scrollbar on any screen size. */
+html { max-width: 100%; overflow-x: hidden; }
+
 body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', sans-serif;
   transition: background .3s ease, color .3s ease;
   overflow-x: hidden;
+  width: 100%;
+}
+
+/* RESPONSIVE: make any image/video/iframe added to the page scale down inside
+   its parent instead of overflowing on small screens. Purely additive safety
+   net — does not change how the current images/icons are displayed. */
+img, video, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3 { font-family: 'Poppins', sans-serif; }
@@ -478,28 +491,266 @@ body.light .skill-bar { background: #eceefb; }
   /* margin-top: 100px; */
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 1080px) {
+/* =====================================================================
+   RESPONSIVE — DESKTOP-FIRST MEDIA QUERIES (largest screen -> smallest)
+   None of these rules change colors, gradients, animations, fonts,
+   or functionality — they only adjust spacing, sizes and layout flow
+   (grid columns, flex-direction, font-size, element widths) so the
+   existing design reflows correctly at every breakpoint.
+
+   Breakpoints used:
+     min-width 1921px  -> Large desktop monitors (1920px+/2560px+)
+     (default styles)  -> Standard laptops & Full HD (1025px - 1920px)
+     max-width 1024px  -> Small laptops / tablet landscape
+     max-width 768px   -> Tablets
+     max-width 600px   -> Small tablets / large phones (landscape edge)
+     max-width 480px   -> Large phones
+     max-width 375px   -> Small/standard phones
+     max-width 320px   -> Extra-small phones
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   LARGE DESKTOP MONITORS (1921px and up, incl. 2560px+ ultra-wide)
+   The layout is fluid by default (grids/flex), so on very wide screens
+   the only fix needed is to cap the content width and re-center it,
+   otherwise cards/grid gaps stretch too far apart on ultra-wide
+   monitors. Design, colors and spacing ratios stay identical.
+--------------------------------------------------------------------- */
+@media (min-width: 1921px) {
+  .hero,
+  .stats,
+  .about-skills,
+  .projects,
+  .services,
+  .experience,
+  .contact {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   SMALL LAPTOPS & TABLET LANDSCAPE (up to 1024px)
+   Hero becomes a single column, About/Skills stack, project & service
+   grids drop from 3 columns to 2. Side-rail + top navbar are still the
+   desktop navigation here since there is enough width for them.
+--------------------------------------------------------------------- */
+@media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; padding-top: 40px; }
   .hero-right { height: 340px; margin-top: 20px; }
   .about-skills { grid-template-columns: 1fr; }
   .about-card { flex-direction: column; text-align: center; }
-  .projects-grid, .services-grid { grid-template-columns: 1fr 1fr; }
+
+  .projects-grid,
+  .services-grid { grid-template-columns: 1fr 1fr; }
+
   .contact-wrap { grid-template-columns: 1fr; }
+  .contact { padding-left: 60px; padding-right: 60px; }
 }
 
+/* ---------------------------------------------------------------------
+   TABLETS (up to 768px)
+   Switches navigation to the hamburger menu: the side-rail slides off
+   screen and the top nav-links collapse into a dropdown. Section side
+   padding is reduced so content doesn't feel cramped against the edges.
+--------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .side-rail { transform: translateX(-100%); transition: transform .3s ease; }
-  .side-rail.open { transform: translateX(0); }
-  .navbar { left: 0; padding: 0 20px; }
-  main, .footer { margin-left: 0; }
-  .nav-links { position: fixed; top: 76px; left: 0; right: 0; background: var(--bg-soft); flex-direction: column; padding: 20px; gap: 10px; display: none; border-bottom: 1px solid var(--card-border); }
-  .nav-links.open { display: flex; }
-  .hamburger { display: block; }
-  .hero { padding: 40px 24px; }
-  .stats, .about-skills, .projects, .services, .experience, .contact { padding-left: 24px; padding-right: 24px; }
-  .stats { grid-template-columns: 1fr 1fr; }
-  .hero-title { font-size: 2.3rem; }
-  .projects-grid, .services-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
+  .side-rail {
+    transform: translateX(-100%);
+    transition: transform .3s ease;
+  }
+
+  .navbar {
+    left: 0;
+    padding: 0 20px;
+  }
+
+  main,
+  .footer {
+    margin-left: 0;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: var(--bg-soft);
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    display: none;
+    border-bottom: 1px solid var(--card-border);
+    max-height: calc(100vh - 76px);
+    overflow-y: auto; /* long menus stay usable instead of overflowing off-screen */
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    min-width: 44px;
+    min-height: 44px; /* keep a comfortable touch target */
+  }
+
+  .hero {
+    padding: 40px 24px;
+  }
+
+  .stats,
+  .about-skills,
+  .projects,
+  .services,
+  .experience,
+  .contact {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .projects-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 26px;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   SMALL TABLETS / LARGE-PHONE LANDSCAPE (up to 600px)
+   Slightly tighter spacing and a smaller hero illustration so the
+   floating tech icons and orbit ring never crowd the edges.
+--------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .navbar { padding: 0 16px; gap: 10px; }
+  .navbar-right { gap: 10px; }
+
+  .hero { padding: 32px 18px; gap: 28px; }
+  .hero-right { height: 300px; }
+  .orbit-ring { width: 280px; height: 280px; }
+  .laptop { width: 220px; }
+  .laptop-screen { height: 140px; padding: 12px 10px; }
+
+  .about-card, .skills-card { padding: 26px; }
+  .about-photo-wrap { width: 150px; height: 150px; }
+
+  .contact { padding-left: 20px; padding-right: 20px; }
+  .contact-info { padding: 28px 20px; }
+}
+
+/* ---------------------------------------------------------------------
+   LARGE PHONES (up to 480px)
+   Stats collapse to a single column, hero actions/tech-pills wrap and
+   stack cleanly, buttons go full-width for easy tapping, and the hero
+   illustration (orbit ring, laptop mockup, floating icons) scales down
+   further so nothing overlaps the section edges.
+--------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .navbar { padding: 0 14px; }
+  .logo { font-size: 1.25rem; }
+  .theme-toggle { width: 46px; height: 26px; }
+  .btn-hire { padding: 9px 16px; font-size: .85rem; }
+
+  .hero { padding: 28px 16px; text-align: left; }
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 1.4rem; }
+  .badge { font-size: .78rem; padding: 7px 14px; }
+  .hero-desc { max-width: 100%; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  .hero-right { height: 250px; margin-top: 10px; }
+  .orbit-ring { width: 220px; height: 220px; }
+  .laptop { width: 170px; }
+  .laptop-screen { height: 105px; padding: 10px 8px; gap: 6px; }
+  .float-icon { width: 42px; height: 42px; font-size: 1.1rem; border-radius: 12px; }
+
+  .stats { grid-template-columns: 1fr; gap: 14px; padding-left: 16px; padding-right: 16px; }
+  .stat-card { padding: 18px; }
+
+  .about-skills { padding-left: 16px; padding-right: 16px; gap: 16px; }
+  .about-card, .skills-card { padding: 22px; }
+  .about-photo-wrap { width: 130px; height: 130px; }
+  .about-text h2, .skills-header h2 { font-size: 1.4rem; }
+
+  .projects, .services, .experience { padding-left: 16px; padding-right: 16px; }
+  .section-title { font-size: 1.6rem; margin-bottom: 28px; }
+  .project-card, .service-card { padding: 22px; }
+
+  .timeline { padding-left: 22px; }
+  .timeline-content { padding: 18px 16px; }
+
+  .contact { padding-left: 16px; padding-right: 16px; }
+  .contact-info { padding: 24px 18px; }
+  .about-photo-wrap.small { width: 90px; height: 90px; }
+
+  .footer { padding: 26px 16px; }
+}
+
+/* ---------------------------------------------------------------------
+   SMALL / STANDARD PHONES (up to 375px)
+   Slightly smaller type scale and tighter paddings to keep everything
+   comfortably inside narrow viewports (e.g. iPhone SE, small Androids).
+--------------------------------------------------------------------- */
+@media (max-width: 375px) {
+  .hero-title { font-size: 1.75rem; }
+  .hero-subtitle { font-size: 1.25rem; }
+  .tech-pills span { font-size: .76rem; padding: 6px 12px; }
+
+  .hero-right { height: 220px; }
+  .orbit-ring { width: 190px; height: 190px; }
+  .laptop { width: 150px; }
+  .laptop-screen { height: 92px; padding: 8px 7px; gap: 5px; }
+  .float-icon { width: 38px; height: 38px; font-size: 1rem; }
+
+  .about-photo-wrap { width: 110px; height: 110px; }
+  .section-title { font-size: 1.45rem; }
+  .stat-card h3 { font-size: 1.1rem; }
+}
+
+/* ---------------------------------------------------------------------
+   EXTRA-SMALL PHONES (up to 320px)
+   Final safety net for the narrowest supported devices: minimal side
+   padding everywhere and the smallest type scale so text never wraps
+   awkwardly or forces horizontal scrolling.
+--------------------------------------------------------------------- */
+@media (max-width: 320px) {
+  .navbar { padding: 0 10px; gap: 8px; }
+  .navbar-right { gap: 8px; }
+  .btn-hire { padding: 8px 12px; font-size: .8rem; }
+
+  .hero { padding: 22px 12px; }
+  .hero-title { font-size: 1.5rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .hero-desc { font-size: .92rem; }
+
+  .hero-right { height: 190px; }
+  .orbit-ring { width: 160px; height: 160px; }
+  .laptop { width: 130px; }
+  .laptop-screen { height: 78px; padding: 7px 6px; }
+  .float-icon { width: 34px; height: 34px; font-size: .9rem; }
+
+  .stats, .about-skills, .projects, .services, .experience, .contact {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .about-card, .skills-card, .stat-card, .project-card, .service-card {
+    padding: 16px;
+  }
 }

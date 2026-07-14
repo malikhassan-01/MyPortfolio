@@ -7,6 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,9 +30,9 @@
     <a href="#contact" class="side-icon" title="Contact"><i class="fa-solid fa-envelope"></i></a>
   </div>
   <div class="side-icons bottom">
-    <a href="https://github.com/" target="_blank" class="side-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
-    <a href="https://linkedin.com/" target="_blank" class="side-icon" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://instagram.com/" target="_blank" class="side-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://github.com/malikhassan-01" target="_blank" class="side-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/" target="_blank" class="side-icon" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/hassan.webdev01" target="_blank" class="side-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
   </div>
 </aside>
 
@@ -63,7 +71,7 @@
       </div>
       <p class="hero-desc">I build modern, responsive and scalable web applications using Laravel and JavaScript.</p>
       <div class="hero-actions">
-        <a href="#" class="btn btn-primary" id="downloadCv"><i class="fa-solid fa-download"></i> Download CV</a>
+        <a href="Muhammad_Hassan_CV.docx" class="btn btn-primary" id="downloadCv"><i class="fa-solid fa-download"></i> Download CV</a>
         <a href="#projects" class="btn btn-outline">View Projects <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -258,11 +266,19 @@
           <li><i class="fa-solid fa-location-dot"></i> Taxila,Pakistan</li>
         </ul>
         <div class="contact-socials">
-          <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/malikhassan-01" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/hassan.webdev01" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
+      <!-- FIX: the .contact-wrap div and #contact section and <main> were never
+           closed in the original markup. This let the footer bleed into the
+           content flow and caused inconsistent layout/overflow on some screen
+           sizes. Closing tags added below; no visual content was changed. -->
+    </div>
+  </section>
+
+</main>
 
 <footer class="footer">
   <p>&copy; <span id="year"></span> Muhammad Hassan. All Rights Reserved.</p>

@@ -73,7 +73,8 @@ if (emailLink) {
 // ===== Download CV placeholder =====
 document.getElementById('downloadCv').addEventListener('click', (e) => {
   e.preventDefault();
-  alert('Apna CV (PDF) is button se link karne ke liye "downloadCv" link ko apni CV file ka path de dein script/HTML mein.');
+  const cvUrl = 'Muhammad_Hassan_CV.docx'; // Replace with the actual URL of your CV file
+  window.open(cvUrl, '_blank');
 });
 
 // ===== Footer year =====
